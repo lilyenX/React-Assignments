@@ -1,26 +1,11 @@
-import React, { useState } from 'react'
+import ProfileCard from "./components/ProfileCard";
 
 const App = () => {
-  interface User{
-    id: number,
-    name: string,
-    title: string,
-    imgUrl: string,
-  }
-  const [users,setUsers] = useState<User[]>([])//empty array for now
-  
   return (
     <div>
       <h1>Our Team</h1>
-      <div>
-        <div>
-          <img src="" alt="" />
-          <h2></h2>
-          <p></p>
-        </div>
-      </div>
+      <ProfileCard />
     </div>
-  )
-}
-
-export default App
+  );
+};
+export default App;
