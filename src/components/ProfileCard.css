@@ -1,0 +1,27 @@
+.cards-section{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+.card-img{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.cards{
+    background-color: white;
+    border-radius: 10px;
+    height: 300px;
+    width: 250px;
+    margin: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+.name{
+    font-weight: 700;
+    color: black;
+
+}
+.title{
+    font-weight: 400;
+}
