@@ -39,8 +39,8 @@ const ProfileCard = () => {
             <img className="card-img"
               src={user.imgUrl}
             />
-            <h2>{user.name}</h2>
-            <p>{user.title}</p>
+            <h2 className="name">{user.name}</h2>
+            <p className="title">{user.title}</p>
           </div>
         );
       })}
