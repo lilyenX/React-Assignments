@@ -1,0 +1,242 @@
+:root {
+  --app-bg: white;
+  --input-bg: #ffffff;
+  --input-color: #303030;
+  --primary-purple: #b18cf0;
+  --shadow: rgba(0, 0, 0, 0.05);
+  --text-color: #333333;
+  --todo-bg: ##f8f8f8;
+  --todo-done-color: #a0aec0;
+  --todo-text: #5a6a85;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+.app-dark {
+  --app-bg: #303030;
+  --input-bg: #484848;
+  --input-color: #bebebe;
+  --primary-purple: #8e67d4;
+  --shadow: rgba(0, 0, 0, 0.4);
+  --text-color: #ffffff;
+  --todo-bg: #383838;
+  --todo-done-color: #ddccff;
+  --todo-text: #ccb3ff;
+
+  /* A slightly deeper purple for dark mode */
+}
+.app-container {
+  background-color: var(--app-bg);
+  color: var(--text-color);
+  min-height: 100vh;
+  padding: 50px;
+  transition: background-color 0.3s ease;
+}
+.top-bar {
+  align-items: center;
+  background-color: var(--primary-purple);
+  border-radius: 10px;
+  color: var(--app-bg);
+  display: flex;
+  height: 70px;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 768px;
+  padding: 10px 20px;
+  width: 95%;
+}
+.left-section,
+.right-section {
+  flex: 1;
+}
+.center-section {
+  flex: 2;
+  text-align: center;
+}
+.toggle-btn {
+  background: none;
+  border: 1px solid var(--input-bg);
+  border-radius: 50%;
+  color: var(--app-bg);
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 5px;
+
+  /* border: none; */
+}
+.input-section {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+
+  /* gap: 10px; */
+  /* margin-top: 30px; */
+  /* padding: 0 20px; */
+}
+.main-input {
+  background-color: var(--input-bg);
+  border: 1px solid var(--app-bg);
+  border-radius: 25px;
+  box-shadow: 0 2px 5px var(--shadow);
+  color: var(--input-color);
+  font-size: 0.95rem;
+  max-width: 400px;
+  outline: none;
+  padding: 12px 20px;
+  width: 95%;
+}
+.add-btn {
+  background-color: var(--primary-purple);
+  border: none;
+  border-radius: 25px;
+  color: var(--app-bg);
+  cursor: pointer;
+  display: flex;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 10px 20px;
+}
+
+.todo-section {
+  background: var(--todo-bg);
+  border-radius: 15px;
+  box-shadow: 0 10px 30px var(--shadow);
+  margin: 20px auto;
+  max-width: 768px;
+  padding: 10px;
+  width: 95%;
+
+  /* The white card background */
+  /* Soft shadow */
+}
+
+.todo-list-part {
+  align-items: center;
+  display: flex;
+  padding: 15px 0;
+
+  /* border-bottom: 1px solid #f0f0f0;  */
+}
+
+.circle-check {
+  align-items: center;
+  background: none;
+  border: 2px solid var(--primary-purple);
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  height: 22px;
+  justify-content: center;
+  padding: 0;
+  width: 22px;
+}
+
+.todo-list-part.done .inner-circle {
+  background-color: var(--primary-purple);
+  border-radius: 50%;
+  height: 12px;
+  width: 12px;
+}
+
+.todo-text {
+  color: var(--todo-text);
+  flex: 1;
+  font-size: 1.1rem;
+  margin-left: 20px;
+  min-width: 0;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.todo-list-part.done .todo-text {
+  color: var(--todo-done-color);
+  text-decoration: line-through;
+}
+.delete-btn,
+.edit-btn {
+  background: transparent;
+  border: 1px solid var(--input-bg);
+  color: var(--primary-purple);
+  cursor: pointer;
+  font-size: 1rem;
+}
+.delete-btn:hover,
+.edit-btn:hover {
+  transform: translateY(-3px);
+}
+.filter-section {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+.filter-section button {
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: var(--primary-purple);
+  cursor: pointer;
+  color: var(--input-bg);
+}
+
+@media (max-width: 793px) {
+  .center-section h1 {
+    flex-wrap: nowrap;
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 768px) {
+  .top-bar {
+    padding: 10px;
+    width: 100%;
+  }
+  .todo-section {
+    width: 100%;
+  }
+  .main-input {
+    width: 70%;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-container {
+    padding: 16px;
+  }
+
+  .top-bar {
+    flex-direction: column;
+    gap: 12px;
+    height: auto;
+    width: 80%;
+  }
+
+  .input-section {
+    width: 100%;
+
+    /* flex-direction: column; */
+    /* gap: 5px; */
+  }
+
+  .main-input,
+  .todo-section {
+    max-width: 80%;
+    width: 100%;
+  }
+}
+
+@media (max-width: 320px) {
+  .app-container {
+    padding: 10px;
+  }
+
+  .todo-text {
+    font-size: 0.9rem;
+  }
+
+  .add-btn {
+    font-size: 1rem;
+    padding: 10px 14px;
+  }
+}
